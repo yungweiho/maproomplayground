@@ -1,0 +1,13 @@
+@import "../styles/variables.scss";
+
+.arrow {
+  cursor: pointer;
+
+  @include hover-limit {
+    &:hover {
+      & > path {
+        fill: white;
+      }
+    }
+  }
+}

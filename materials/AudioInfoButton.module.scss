@@ -1,0 +1,28 @@
+@import "../styles/variables.scss";
+
+.container {
+  cursor: pointer;
+  @include flex-column;
+  justify-content: center;
+  align-items: center;
+  @include hover-limit {
+    &:hover {
+      & > svg > path {
+        fill: rgba(0, 0, 0, 0.9);
+      }
+
+      & > .text {
+        color: rgba(0, 0, 0, 0.9);
+      }
+    }
+  }
+}
+
+.text {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 25px;
+  color: #8e8e8e;
+  letter-spacing: 1px;
+  margin-top: 3px;
+}

@@ -1,0 +1,16 @@
+@import "../styles/variables.scss";
+
+.container {
+  width: 45px;
+  height: 45px;
+  border-radius: 100%;
+  background-color: #575757;
+  cursor: pointer;
+  display: flex;
+  box-shadow: -2px 0px 5px rgba(0, 0, 0, 0.25);
+  @include flex-center;
+  @include phone {
+    width: 35px;
+    height: 35px;
+  }
+}

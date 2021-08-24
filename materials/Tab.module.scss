@@ -1,0 +1,39 @@
+@import "../styles/variables.scss";
+
+// .border1,
+// .border2,
+// .border3 {
+//   cursor: pointer;
+// }
+
+// .text1 {
+//   cursor: pointer;
+// }
+
+.container {
+  @media screen and (max-width: 1145px) {
+    width: 100%;
+    text-align: left;
+  }
+  // @include bb;
+  @media screen and (max-width: 399px) {
+    & > svg {
+      width: 100%;
+      height: 7.75vw;
+    }
+  }
+}
+
+.one,
+.two,
+.three {
+  cursor: pointer;
+}
+
+.text_active {
+  fill: #575757;
+}
+
+.active {
+  opacity: 1;
+}

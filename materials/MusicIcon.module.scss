@@ -1,0 +1,33 @@
+@import "../styles/variables.scss";
+
+.container {
+  width: 45px;
+  height: 45px;
+  border-radius: 100%;
+  background-color: #575757;
+  cursor: pointer;
+  display: flex;
+  box-shadow: -2px 0px 5px rgba(0, 0, 0, 0.25);
+  @include flex-center;
+
+  .music_icon {
+    width: 22px;
+    height: 24.97px;
+    margin-left: -3px;
+    transition: 0.3s;
+    background-image: url("/maproomplayground/map/music_icon.png");
+    @include bg-contain;
+  }
+
+  @include hover-limit {
+    &:hover {
+      .music_icon {
+        transform: scale(1.1);
+      }
+    }
+  }
+
+  @include phone {
+    transform: scale(0.77);
+  }
+}

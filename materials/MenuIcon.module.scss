@@ -1,0 +1,34 @@
+@import "../styles/variables.scss";
+
+.container {
+  position: relative;
+  width: 45px;
+  height: 45px;
+  border-radius: 100%;
+  background-color: #575757;
+  cursor: pointer;
+  display: flex;
+  box-shadow: -2px 0px 5px rgba(0, 0, 0, 0.25);
+  z-index: 2;
+  @include flex-center;
+
+  .menu_icon path {
+    transition: 0.3s;
+  }
+
+  @include hover-limit {
+    &:hover {
+      .menu_icon path {
+        d: path(
+          "M0 1.26807C0 0.577711 0.559644 0.0180664 1.25 0.0180664H25.75C26.4404 0.0180664 27 0.577711 27 1.26807C27 1.95842 26.4404 2.51807 25.75 2.51807H1.25C0.559644 2.51807 0 1.95842 0 1.26807ZM0 8.50021C0 7.80985 0.559644 7.25021 1.25 7.25021H25.75C26.4404 7.25021 27 7.80985 27 8.50021C27 9.19057 26.4404 9.75021 25.75 9.75021H1.25C0.559644 9.75021 0 9.19057 0 8.50021ZM1.25 14.4824C0.559644 14.4824 0 15.042 0 15.7324C0 16.4227 0.559644 16.9824 1.25 16.9824H25.75C26.4404 16.9824 27 16.4227 27 15.7324C27 15.042 26.4404 14.4824 25.75 14.4824H1.25Z"
+        );
+      }
+    }
+  }
+
+  @include phone {
+    transform: scale(0.77);
+    // margin-left: -4px;
+    // margin-top: -4px;
+  }
+}

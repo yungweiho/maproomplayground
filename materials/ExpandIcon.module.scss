@@ -1,0 +1,16 @@
+@import "../styles/variables.scss";
+
+.container {
+  position: absolute;
+  top: 20px;
+  left: calc(50% - 37px / 2);
+  cursor: pointer;
+  // display: none;
+  // @media screen and (max-width: 1145px) {
+  //   display: block;
+  // }
+
+  &.open {
+    transform: rotate(180deg);
+  }
+}

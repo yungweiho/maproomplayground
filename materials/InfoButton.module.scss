@@ -1,0 +1,21 @@
+@import "../styles/variables.scss";
+
+.container {
+  margin-top: 11px;
+  margin-bottom: 34px;
+  cursor: pointer;
+
+  @include hover-limit {
+    &:hover {
+      & > rect {
+        fill: #575757;
+      }
+    }
+  }
+
+  &:active {
+    & > rect {
+      fill: #575757;
+    }
+  }
+}
