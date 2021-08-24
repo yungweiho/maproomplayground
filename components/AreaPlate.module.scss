@@ -1,0 +1,19 @@
+@import "../styles/variables.scss";
+
+.area_icon {
+  position: absolute;
+  width: 345px;
+  height: 553px;
+  background-position: 0 0;
+  background-repeat: no-repeat;
+  animation: gray_icon_animation 1.5s steps(11) infinite;
+}
+
+@keyframes gray_icon_animation {
+  0% {
+    background-position: 0% 0%;
+  }
+  100% {
+    background-position: 100% 0%;
+  }
+}

@@ -1,0 +1,26 @@
+@import "../styles/variables.scss";
+
+.gray_icon {
+  position: absolute;
+  width: 345px;
+  height: 553px;
+  // top: 28%;
+  // left: 66.5%;
+  // transform: scale(0.2);
+  background-size: calc(1.1 * 1100%);
+  // @include bb;
+  background-position: 0 0;
+  background-repeat: no-repeat;
+  // background-image: url("/map/gray_icon.png");
+  animation: gray_icon_animation 1.5s steps(11) infinite;
+  z-index: 3;
+}
+
+@keyframes gray_icon_animation {
+  0% {
+    background-position: 0% 0%;
+  }
+  100% {
+    background-position: 100% 0%;
+  }
+}

@@ -1,0 +1,22 @@
+@import "../styles/variables.scss";
+
+.container {
+  position: relative;
+  width: 100%;
+  height: calc(var(--vh, 1vh) * 100);
+  overflow: hidden;
+  background-color: #f1db81;
+  background-image: url("/maproomplayground/map/material.png");
+  // width: max-content;
+  /* 網頁捲軸【寬度】 */
+  // &::-webkit-scrollbar {
+  //   z-index: 10;
+  // }
+}
+
+.handle {
+  cursor: grab;
+  &:active {
+    cursor: grabbing;
+  }
+}

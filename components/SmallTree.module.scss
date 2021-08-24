@@ -1,0 +1,22 @@
+@import "../styles/variables.scss";
+
+.small_tree {
+  position: absolute;
+  width: 300px;
+  height: 357.1px;
+  // @include bb;
+  background-size: 1500px;
+  background-position: 0 0;
+  background-repeat: no-repeat;
+  background-image: url("/maproomplayground/map/small_tree.png");
+  animation: small_tree_animation 1s steps(4) infinite;
+}
+
+@keyframes small_tree_animation {
+  0% {
+    background-position: 0% 0%;
+  }
+  100% {
+    background-position: 99.99% 0%;
+  }
+}

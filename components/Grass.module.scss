@@ -1,0 +1,22 @@
+@import "../styles/variables.scss";
+
+.grass {
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  // @include bb;
+  background-size: 2700px;
+  background-position: 0 0;
+  background-repeat: no-repeat;
+  background-image: url("/maproomplayground/map/grass.png");
+  animation: grass_animation 1.5s steps(8) infinite;
+}
+
+@keyframes grass_animation {
+  0% {
+    background-position: 0% 0%;
+  }
+  100% {
+    background-position: 99.99% 0%;
+  }
+}

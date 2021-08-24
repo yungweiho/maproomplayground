@@ -1,0 +1,102 @@
+@import "../styles/variables.scss";
+
+.container {
+  position: absolute;
+  width: 407px;
+  min-width: 279px;
+  height: 50px;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: 30;
+  display: flex;
+  align-items: center;
+
+  @media screen and (max-width: 407px) {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+.block {
+  display: flex;
+  width: max-content;
+  height: 100%;
+  align-items: center;
+}
+
+.close {
+  position: absolute;
+  right: 0;
+  top: -20px;
+  width: 22px;
+  height: 20px;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  @include flex-center;
+  cursor: pointer;
+  .x {
+    width: 15px;
+    height: 15px;
+    background-image: url("/maproomplayground/map/x.png");
+    @include bg-contain;
+  }
+}
+
+.prev {
+  cursor: pointer;
+  margin-top: -5px;
+  margin-left: 45px;
+  margin-right: 20px;
+  @media screen and (max-width: 407px) {
+    margin-left: 0;
+  }
+}
+
+.next {
+  cursor: pointer;
+  margin-top: -5px;
+  margin-left: 20px;
+}
+
+.next > svg {
+  transform: rotate(180deg);
+}
+
+.play {
+  cursor: pointer;
+  margin-top: 5px;
+}
+
+.curr_time {
+  font-weight: 300;
+  font-size: 11px;
+  color: #c4c4c4;
+  margin-left: 30px;
+  letter-spacing: 1px;
+}
+
+.divider {
+  font-weight: 300;
+  font-size: 11px;
+  color: #c4c4c4;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+.dura_time {
+  font-weight: 300;
+  font-size: 11px;
+  color: #c4c4c4;
+}
+
+.name {
+  font-weight: 300;
+  font-size: 14px;
+  letter-spacing: 1px;
+  color: #ffffff;
+  margin-left: 30px;
+  @media screen and (max-width: 407px) {
+    display: none;
+  }
+}

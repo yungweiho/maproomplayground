@@ -1,0 +1,33 @@
+@import "../styles/variables.scss";
+
+.container {
+  position: relative;
+  width: 100%;
+  height: calc(var(--vh, 1vh) * 100 - 130px);
+  overflow: auto;
+  background-color: #fff;
+  z-index: 3;
+  box-sizing: border-box;
+
+  @include phone {
+    height: calc(var(--vh, 1vh) * 100 - 87px);
+    padding: 14px 30px 25px 30px;
+  }
+}
+
+.block {
+  display: flex;
+  position: relative;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 50px 131px 0 131px;
+  // align-items: center;
+  justify-content: center;
+  @media screen and (max-width: 1052px) {
+    padding: 50px 25px 0 25px;
+  }
+
+  @include phone {
+    padding: 12px 0px 0 0px;
+  }
+}

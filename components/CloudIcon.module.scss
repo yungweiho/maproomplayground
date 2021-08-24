@@ -1,0 +1,27 @@
+@import "../styles/variables.scss";
+
+.cloud_icon {
+  position: absolute;
+  top: 490px;
+  left: 180px;
+  width: 80px;
+  height: 60px;
+  // transform: scale(0.2);
+
+  @include bg-contain;
+  // @include bb;
+  background-image: url("/maproomplayground/map/cloud.png");
+  animation: cloud_animation 2s infinite;
+}
+
+@keyframes cloud_animation {
+  0% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(10px, -5px);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}

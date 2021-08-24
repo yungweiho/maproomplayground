@@ -1,0 +1,50 @@
+@import "../styles/variables.scss";
+
+.container {
+  width: 225px;
+  min-height: calc(var(--vh, 1vh) * 100);
+  // @include bb;
+  box-sizing: border-box;
+  padding: 0 0 0 38px;
+  @include phone {
+    display: none;
+  }
+}
+
+.block {
+  margin-bottom: 30px;
+}
+
+.title_block {
+  display: flex;
+}
+
+.title {
+  font-weight: 500;
+  font-size: 16px;
+  color: #575757;
+  margin-left: 12.71px;
+}
+
+.work_container {
+  margin-top: 31px;
+  &.hide {
+    display: none;
+  }
+}
+
+.work_block {
+  display: flex;
+}
+
+.work_id {
+  font-size: 16px;
+  color: #8e8e8e;
+  margin-right: 11px;
+}
+
+.work_name {
+  font-size: 16px;
+  color: #8e8e8e;
+  letter-spacing: 1px;
+}

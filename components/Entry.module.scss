@@ -1,0 +1,31 @@
+@import "../styles/variables.scss";
+
+.container {
+  width: 100%;
+  height: calc(var(--vh, 1vh) * 100);
+  overflow: auto;
+}
+
+.background {
+  width: 1920px;
+  height: 1080px;
+  @include bg-cover;
+  background-image: url("/maproomplayground/entry/background.png");
+}
+
+.enter {
+  position: absolute;
+  z-index: 1;
+  left: calc(50% - 150px / 2);
+  bottom: 50px;
+  width: 150px;
+  height: 40px;
+  line-height: 38px;
+  border-radius: 10px;
+  background-color: #000;
+  color: #fff;
+  text-align: center;
+  letter-spacing: 1.5px;
+  font-size: 20px;
+  cursor: pointer;
+}
