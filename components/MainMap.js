@@ -627,7 +627,12 @@ const MainMap2 = React.memo(
             router.query.mapName !== "main" && (
               <div
                 className="name"
-                onClick={() => router.push("/map/ground")}
+                onClick={() =>
+                  router.push({
+                    pathname: "/map",
+                    query: { mapName: "ground" },
+                  })
+                }
                 style={{ cursor: "pointer" }}
               >
                 <NameplateGround scale={0.23} top={35} left={69} type="gray" />
@@ -637,21 +642,36 @@ const MainMap2 = React.memo(
           {router.query.mapName === "main" && (
             <div className="name">
               <div
-                onClick={() => router.push("/map/ground")}
+                onClick={() =>
+                  router.push({
+                    pathname: "/map",
+                    query: { mapName: "ground" },
+                  })
+                }
                 style={{ cursor: "pointer" }}
               >
                 <NameplateGround scale={0.23} top={34} left={69} type="gray" />
               </div>
 
               <div
-                onClick={() => router.push("/map/red-line")}
+                onClick={() =>
+                  router.push({
+                    pathname: "/map",
+                    query: { mapName: "red-line" },
+                  })
+                }
                 style={{ cursor: "pointer" }}
               >
                 <NameplateGround scale={0.23} top={62.5} left={51} type="red" />
               </div>
 
               <div
-                onClick={() => router.push("/map/blue-line")}
+                onClick={() =>
+                  router.push({
+                    pathname: "/map",
+                    query: { mapName: "blue-line" },
+                  })
+                }
                 style={{ cursor: "pointer" }}
               >
                 <NameplateGround
@@ -662,7 +682,12 @@ const MainMap2 = React.memo(
                 />
               </div>
               <div
-                onClick={() => router.push("/map/green-line")}
+                onClick={() =>
+                  router.push({
+                    pathname: "/map",
+                    query: { mapName: "green-line" },
+                  })
+                }
                 style={{ cursor: "pointer" }}
               >
                 <NameplateGround

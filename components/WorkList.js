@@ -7,6 +7,7 @@ import InfoButton from "../materials/InfoButton";
 import { useRouter } from "next/router";
 import ExpandIcon from "../materials/ExpandIcon";
 import { workData } from "../utils/constans";
+import Art from "./Art";
 
 const WorkList = ({
   isOpen,
@@ -90,6 +91,9 @@ const WorkList = ({
   return (
     <div className={clsx(styles.container, { [styles.close]: !isOpen })}>
       <ExpandIcon status={isOpen} setStatus={setOpen} />
+      <div className={styles.art}>
+        <Art scale={0.22} />
+      </div>
       <div className={styles.name}>{name}</div>
       <div className={styles.info_button} onClick={() => setInfo(!isInfo)}>
         <div className={styles.info_button_bg}>

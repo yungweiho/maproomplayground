@@ -8,6 +8,7 @@
   background-color: #fff;
   z-index: 3;
   box-sizing: border-box;
+  padding-bottom: 50px;
 
   @include phone {
     height: calc(var(--vh, 1vh) * 100 - 87px);

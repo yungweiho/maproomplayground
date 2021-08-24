@@ -1,9 +1,12 @@
 import * as React from "react";
 import styles from "./Grass.module.scss";
 import { MapData } from "./Map";
+import { EntryData } from "./Entry";
 
-const Grass = ({ scale, top, left }) => {
-  const consumerData = React.useContext(MapData);
+const Grass = ({ parent, scale, top, left }) => {
+  const consumerData = React.useContext(
+    parent === "entry" ? EntryData : MapData
+  );
 
   const icon_scale = React.useMemo(() => {
     if (consumerData.screenHeight > 1080)

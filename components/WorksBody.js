@@ -11,8 +11,12 @@ const WorksBody = ({
   toggleIndex,
   setToggleIndex,
   setWorkkIndex,
+  page,
+  setPage,
+  limit,
 }) => {
   const router = useRouter();
+
   return (
     <div className={styles.container}>
       <SmallSearchBar />
@@ -28,6 +32,9 @@ const WorksBody = ({
           setWorkDialodOpen={setWorkDialodOpen}
           toggleIndex={toggleIndex}
           setWorkkIndex={setWorkkIndex}
+          page={page}
+          setPage={setPage}
+          limit={limit}
         />
         {router.query.type && (
           <WorksRoadToggle

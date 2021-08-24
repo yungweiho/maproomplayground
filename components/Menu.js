@@ -17,22 +17,26 @@ const Menu = React.memo(({ isOpen, setLoading }) => {
         {
           id: 1,
           name: "日光大道",
-          url: "/map/red-line",
+          url: "/map",
+          mapName: "red-line",
         },
         {
           id: 2,
           name: "伯樂小徑",
-          url: "/map/blue-line",
+          url: "/map",
+          mapName: "blue-line",
         },
         {
           id: 3,
           name: "綠蔭秘境",
-          url: "/map/green-line",
+          url: "/map",
+          mapName: "green-line",
         },
         {
           id: 4,
           name: "碑林廣場",
-          url: "/map/ground",
+          url: "/map",
+          mapName: "ground",
         },
       ],
     },
@@ -57,7 +61,7 @@ const Menu = React.memo(({ isOpen, setLoading }) => {
     },
   ];
 
-  const handleClick = (e, url, query) => {
+  const handleClick = (e, url, query, mapName) => {
     e.preventDefault();
     if (!query) {
       setLoading(true);
@@ -65,6 +69,7 @@ const Menu = React.memo(({ isOpen, setLoading }) => {
     router.push({
       pathname: url,
       query: query ? { type: query } : undefined,
+      query: mapName ? { mapName } : undefined,
     });
   };
 
@@ -72,7 +77,7 @@ const Menu = React.memo(({ isOpen, setLoading }) => {
     <div className={clsx(styles.container, { [styles.close]: !isOpen })}>
       <div
         className={styles.logo}
-        onClick={(e) => handleClick(e, "/map/main")}
+        onClick={(e) => handleClick(e, "/map", undefined, "main")}
       />
 
       <div className={styles.block}>
@@ -87,7 +92,9 @@ const Menu = React.memo(({ isOpen, setLoading }) => {
                 <div
                   key={item.id}
                   className={styles.sub_title_block}
-                  onClick={(e) => handleClick(e, item.url, item.query)}
+                  onClick={(e) =>
+                    handleClick(e, item.url, item.query, item?.mapName)
+                  }
                 >
                   <TriIcon
                     type="menu"

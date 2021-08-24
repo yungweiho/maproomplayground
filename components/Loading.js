@@ -3,10 +3,10 @@ import clsx from "clsx";
 import gsap from "gsap";
 import styles from "./Loading.module.scss";
 import { is, scan } from "ramda";
+import Art from "./Art";
 
 const Loading = React.memo(({ isLoading, isLoadingEnd, setLoading }) => {
   React.useEffect(() => {
-    console.log(isLoading);
     if (isLoading) {
       const tl = gsap.timeline({
         onComplete: () => {
@@ -17,7 +17,7 @@ const Loading = React.memo(({ isLoading, isLoadingEnd, setLoading }) => {
       tl.to(
         ".loading_container",
         {
-          duration: 2,
+          duration: 0.1,
           opacity: 0,
         },
         2
@@ -25,8 +25,8 @@ const Loading = React.memo(({ isLoading, isLoadingEnd, setLoading }) => {
         .to(
           ".cloud_right_bottom",
           {
-            duration: 2,
-            // opacity: 0,
+            duration: 1,
+            opacity: 0,
             transform: "translate(100%)",
           },
           2
@@ -34,8 +34,8 @@ const Loading = React.memo(({ isLoading, isLoadingEnd, setLoading }) => {
         .to(
           ".cloud_left_bottom",
           {
-            duration: 2,
-            // opacity: 0,
+            duration: 1,
+            opacity: 0,
             transform: "translate(-100%)",
           },
           2.2
@@ -43,8 +43,8 @@ const Loading = React.memo(({ isLoading, isLoadingEnd, setLoading }) => {
         .to(
           ".cloud_left",
           {
-            duration: 2,
-            // opacity: 0,
+            duration: 1,
+            opacity: 0,
             transform: "translate(-100%, -100%)",
           },
           2.1
@@ -52,8 +52,8 @@ const Loading = React.memo(({ isLoading, isLoadingEnd, setLoading }) => {
         .to(
           ".cloud_left_top",
           {
-            duration: 2,
-            // opacity: 0,
+            duration: 1,
+            opacity: 0,
             transform: "translate(-100%, -10%)",
           },
           2.2
@@ -62,7 +62,7 @@ const Loading = React.memo(({ isLoading, isLoadingEnd, setLoading }) => {
           ".cloud_top",
           {
             duration: 1,
-            // opacity: 0,
+            opacity: 0,
             transform: "translate(0, -100%) rotate(180deg)",
           },
           2.2
@@ -71,7 +71,7 @@ const Loading = React.memo(({ isLoading, isLoadingEnd, setLoading }) => {
           ".cloud_right_top",
           {
             duration: 0.5,
-            // opacity: 0,
+            opacity: 0,
             transform: "translate(100%, 0)",
           },
           2.1
@@ -105,7 +105,10 @@ const Loading = React.memo(({ isLoading, isLoadingEnd, setLoading }) => {
         className={clsx(styles.container, "loading_container", {
           [styles.close]: isLoadingEnd,
         })}
-      ></div>
+      >
+        <div className={styles.text}>Loading...</div>
+        <Art></Art>
+      </div>
       <div
         className={clsx(styles.cloud_right_bottom, "cloud_right_bottom")}
       ></div>

@@ -7,10 +7,29 @@
 }
 
 .background {
+  position: relative;
   width: 1920px;
   height: 1080px;
-  @include bg-cover;
+  overflow: hidden;
+  @include bg-contain;
   background-image: url("/maproomplayground/entry/background.png");
+  @media screen and (min-width: 1920px) {
+    width: 100vw;
+    height: calc(100vw * 1080 / 1920);
+  }
+  @media screen and (min-height: 1080px) {
+    width: calc(100vh * 1920 / 1080);
+    height: calc(var(--vh, 1vh) * 100);
+  }
+  // @media screen and (min-height: 1080px) and (orientation: landscape) {
+  //   width: 100vw;
+  //   height: calc(var(--vh, 1vh) * 100);
+  //   // @include bg-cover;
+  // }
+  @media screen and (orientation: portrait) and (min-width: 1920px) {
+    width: calc(100vh * 1920 / 1080);
+    height: calc(var(--vh, 1vh) * 100);
+  }
 }
 
 .enter {

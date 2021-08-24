@@ -1,0 +1,24 @@
+@import "../styles/variables.scss";
+
+.art {
+  flex-shrink: 0;
+  position: relative;
+  width: 901px;
+  height: 901px;
+  // @include bb;
+  // background-size: 2700px;
+  background-position: 0 0;
+  transform: scale(0.35);
+  background-repeat: no-repeat;
+  background-image: url("/maproomplayground/red_art.png");
+  animation: grass_animation 1.5s steps(6) infinite;
+}
+
+@keyframes grass_animation {
+  0% {
+    background-position: 0% 0%;
+  }
+  100% {
+    background-position: 99.99% 0%;
+  }
+}

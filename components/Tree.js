@@ -1,9 +1,12 @@
 import * as React from "react";
 import styles from "./Tree.module.scss";
 import { MapData } from "./Map";
+import { EntryData } from "./Entry";
 
-const Tree = ({ scale, top, left }) => {
-  const consumerData = React.useContext(MapData);
+const Tree = ({ parent, scale, top, left }) => {
+  const consumerData = React.useContext(
+    parent === "entry" ? EntryData : MapData
+  );
 
   const icon_scale = React.useMemo(() => {
     if (consumerData.screenHeight > 1080)

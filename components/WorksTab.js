@@ -3,7 +3,7 @@ import clsx from "clsx";
 import styles from "./WorksTab.module.scss";
 import { useRouter } from "next/router";
 
-const WorksTab = React.memo(({ setToggleIndex }) => {
+const WorksTab = React.memo(({ handleTabClick }) => {
   const router = useRouter();
   const tabList = [
     {
@@ -25,15 +25,6 @@ const WorksTab = React.memo(({ setToggleIndex }) => {
     },
   ];
 
-  const handleClick = (name, toggle, query) => {
-    router.push({
-      pathname: "/map/works",
-      query: query ? { type: query } : undefined,
-    });
-
-    setToggleIndex(null);
-  };
-
   return (
     <div className={styles.container}>
       {tabList.map((item) => (
@@ -44,7 +35,9 @@ const WorksTab = React.memo(({ setToggleIndex }) => {
               router.query.type === item.query ||
               (!router.query.type && item.id === 1),
           })}
-          onClick={() => handleClick(item.name, item.defaultToggle, item.query)}
+          onClick={() =>
+            handleTabClick(item.name, item.defaultToggle, item.query)
+          }
         >
           {item.name}
         </div>

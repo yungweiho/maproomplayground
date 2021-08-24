@@ -140,14 +140,16 @@ const Map = () => {
           </Draggable>
         )}
       </div>
-      <WorkList
-        isOpen={isWorkListOpen}
-        setOpen={setWorkListOpen}
-        groundArea={groundArea}
-        setGroundArea={setGroundArea}
-        setWorkkIndex={setWorkkIndex}
-        setWorkDialodOpen={setWorkDialodOpen}
-      />
+      {router.query.mapName !== "works" && (
+        <WorkList
+          isOpen={isWorkListOpen}
+          setOpen={setWorkListOpen}
+          groundArea={groundArea}
+          setGroundArea={setGroundArea}
+          setWorkkIndex={setWorkkIndex}
+          setWorkDialodOpen={setWorkDialodOpen}
+        />
+      )}
       <MapDialog
         isOpen={isMapDialogOpen}
         onClose={() => setMapDialogOpen(false)}
